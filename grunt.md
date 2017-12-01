@@ -1,9 +1,9 @@
 # github.io
 blog
 
-한글깨짐?
+한글깨짐
 
-grunt 설치
+grunt설치
 
 
-grunt copy 옵션
+grunt copy옵션
