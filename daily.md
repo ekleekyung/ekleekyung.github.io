@@ -3,6 +3,7 @@
  [intellij] : intellij툴 관련
  [미디어캐스트] : 미디어캐스트 관련
  [싸인캐스트] : 미디어캐스트 관련
+ [blog] : 현재작업내용.
 
 ##solved
 ###[intellij] hibernate schema run as application 문제.//2017.12.18 : -ek
@@ -44,7 +45,21 @@ error log : servlet null 관련  >
 ##todo solve
 ###1.[intellij]dc 등 관련 live template 설정 옮기기.
 ###2.[미디어캐스트] player_skin null 문제 - event시
-###3.[미디어캐스트] player_skin null 문제 - event시
+###3. Jekyll을 사용하여 GitHub Pages 만들기 - 우선순위 낮아도 됨.
+###4. diff classes path
+
+블로그 링크:
+http://blog.saltfactory.net/upgrade-github-pages-dependency-versions/
+
+
+그외 좀더 유용한 페이지
+https://jekyllrb-ko.github.io/docs/frontmatter/
+
+공식주소 github
+https://github.com/jekyll/jekyll
+
+https://github.com/jekyll/jekyll/pull/2031
+###3.https://github.com/jekyll/jekyll/pull/2031
 
 
 ##todo organize

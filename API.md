@@ -1,8 +1,8 @@
-# HLS API
+# API
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
+ 
 
 - [Getting started](#getting-started)
   - [First step: setup and support](#first-step-setup-and-support)
@@ -138,8 +138,6 @@ Invoke the following static method: `Hls.isSupported()` to check whether your br
   </script>
 ```
 
-먼저 js load후 Hls.isSupported() 확인
-
 ### Second step: instantiate Hls object and bind it to `<video>` element
 
 Let's
@@ -166,8 +164,6 @@ Let's
   </script>
 ```
 
-hls 객체 instance 만들고 video 요소와 binding
-
 ### Third step: load a manifest
 
 You need to provide manifest URL as below:
@@ -193,8 +189,6 @@ You need to provide manifest URL as below:
   </script>
 ```
 
-manifest 정보 불러오기.
-
 ### Fourth step: control through `<video>` element
 
 Video is controlled through HTML `<video>` element.
@@ -204,8 +198,6 @@ HTMLVideoElement control and events could be used seamlessly.
 ```js
   video.play();
 ```
-
-video play
 
 ### Fifth step: error handling
 
@@ -554,8 +546,8 @@ A value too close from `liveSyncDuration` is likely to cause playback stalls.
 
 (default: `false`)
 
-Override current Media Source duration to `Infinity` for a live broadcast.
-Useful, if you are building a player which relies on native UI capabilities in modern browsers.
+Override current Media Source duration to `Infinity` for a live broadcast. 
+Useful, if you are building a player which relies on native UI capabilities in modern browsers. 
 If you want to have a native Live UI in environments like iOS Safari, Safari, Android Google Chrome, etc. set this value to `true`.
 
 ### `enableWorker`
@@ -1132,67 +1124,46 @@ Full list of Events is available below:
 
   - `Hls.Events.MEDIA_ATTACHING`  - fired before MediaSource is attaching to media element
     -  data: { media }
-    미디어요소에 붙을때
   - `Hls.Events.MEDIA_ATTACHED`  - fired when MediaSource has been succesfully attached to media element
     -  data: { }
-    미디어요소에 붙었을때
   - `Hls.Events.MEDIA_DETACHING`  - fired before detaching MediaSource from media element
     -  data: { }
-    미디어요소에서 제거될때
   - `Hls.Events.MEDIA_DETACHED`  - fired when MediaSource has been detached from media element
     -  data: { }
-    미디어요소에서 제거되었을때
   - `Hls.Events.BUFFER_RESET`  - fired when we buffer is going to be reset
     -  data: { }
-    버퍼가 리셋될때
   - `Hls.Events.BUFFER_CODECS`  - fired when we know about the codecs that we need buffers for to push into
     -  data: { tracks : { container, codec, levelCodec, initSegment, metadata } }
-    버퍼코덱정보에대해서 알때
   - `Hls.Events.BUFFER_CREATED`  - fired when sourcebuffers have been created
     -  data: { tracks : tracks }
-    버퍼가 생성되었을때
-  - `Hls.Events.BUFFER_APPENDING`  - fired when we append a segment to the buffer
+   - `Hls.Events.BUFFER_APPENDING`  - fired when we append a segment to the buffer
     -  data: { segment : segment object }
-    버퍼에 쓸때
   - `Hls.Events.BUFFER_APPENDED`  - fired when we are done with appending a media segment to the buffer
     -  data: { parent : segment parent that triggered `BUFFER_APPENDING`, pending : nb of segments waiting for appending for this segment parent }
-    버퍼에 추가되었을때
   - `Hls.Events.BUFFER_EOS`  - fired when the stream is finished and we want to notify the media buffer that there will be no more data
     -  data: { }
-    더이상 버퍼데이터가 없을때, 스트림이 끝났을때
   - `Hls.Events.BUFFER_FLUSHING`  - fired when the media buffer should be flushed
     -  data: { startOffset, endOffset }
-    버퍼 flush가 필요할 때
   - `Hls.Events.BUFFER_FLUSHED`  - fired when the media buffer has been flushed
     -  data: { startOffset, endOffset }
-    버퍼 flush 되었을 때
   - `Hls.Events.MANIFEST_LOADING`  - fired to signal that a manifest loading starts
     -  data: { url : manifestURL }
-    manifest 로딩이 시작되었을때
   - `Hls.Events.MANIFEST_LOADED`  - fired after manifest has been loaded
     -  data: { levels : [available quality levels], audioTracks : [ available audio tracks], url : manifestURL, stats : { trequest, tfirst, tload, mtime}}
-    manifest 로딩이 완료되었을때
   - `Hls.Events.MANIFEST_PARSED`  - fired after manifest has been parsed
     -  data: { levels : [ available quality levels ], firstLevel : index of first quality level appearing in Manifest }
-    manifest 파일이 파싱되었을때
   - `Hls.Events.LEVEL_SWITCH`  - fired when a level switch is requested (deprecated in favor of `LEVEL_SWITCHING`)
     -  data: { level : id of new level }
-    레벨변경 요청이 들어왔을때
   - `Hls.Events.LEVEL_SWITCHING`  - fired when a level switch is requested
     -  data: { `level` object (please see [below](#level) for more information) }
-    레벨변경 요청이 들어왔을때 - 진행중
   - `Hls.Events.LEVEL_SWITCHED`  - fired when a level switch is effective
     -  data: { level : id of new level }
-    레벨변경 요청이 변경되었을때
   - `Hls.Events.LEVEL_LOADING`  - fired when a level playlist loading starts
-    레벨변경 요청이 들어왔을때
     -  data: { url : level URL, level : id of level being loaded }
   - `Hls.Events.LEVEL_LOADED`  - fired when a level playlist loading finishes
     -  data: { details : `levelDetails` object (please see [below](#leveldetails) for more information), level : id of loaded level, stats : { trequest, tfirst, tload, mtime } }
-    레벨이 로드되었을때
   - `Hls.Events.LEVEL_UPDATED`  - fired when a level's details have been updated based on previous details, after it has been loaded
     -  data: { details : `levelDetails` object (please see [below](#leveldetails) for more information), level : id of updated level }
-    레벨이 업데이트되었을때
   - `Hls.Events.LEVEL_PTS_UPDATED`  - fired when a level's PTS information has been updated after parsing a fragment
     -  data: { details : `levelDetails` object (please see [below](#leveldetails) for more information), level : id of updated level, drift: PTS drift observed when parsing last fragment }
   - `Hls.Events.AUDIO_TRACKS_UPDATED`  - fired to notify that audio track lists has been updated
@@ -1231,12 +1202,10 @@ Full list of Events is available below:
     -  data: { id : demuxer id, frag : fragment object, payload : fragment payload, stats : { tstart, tdecrypt}}
   - `Hls.Events.FRAG_PARSING_INIT_SEGMENT` - fired when Init Segment has been extracted from fragment
     -  data: { id: demuxer id, frag : fragment object, moov : moov MP4 box, codecs : codecs found while parsing fragment }
-    조각에서에서부터 segment가 추출되었을때
   - `Hls.Events.FRAG_PARSING_USERDATA`  - fired when parsing sei text is completed
     -  data: { id : demuxer id, frag: fragment object, samples : [ sei samples pes ] }
   - `Hls.Events.FRAG_PARSING_METADATA`  - fired when parsing id3 is completed
       -  data: { id: demuxer id, frag : fragment object, samples : [ id3 pes - pts and dts timestamp are relative, values are in seconds] }
-      id3가 전부 파싱되었을때
   - `Hls.Events.FRAG_PARSING_DATA`  - fired when moof/mdat have been extracted from fragment
     -  data: { id: demuxer id, frag : fragment object, moof : moof MP4 box, mdat : mdat MP4 box, startPTS : PTS of first sample, endPTS : PTS of last sample, startDTS : DTS of first sample, endDTS : DTS of last sample, type : stream type (audio or video), nb : number of samples }
   - `Hls.Events.FRAG_PARSED`  - fired when fragment parsing is completed
@@ -1381,16 +1350,6 @@ See sample `Level` object below:
 ```
 
 - `url` is an array that might contains several items if failover/redundant streams are found in the manifest.
-
-
-레벨은 주어진 퀄리티 레벨정보표현
-퀄리티관련정보, manifest 정보관련
-- 레벨 bitrate
-- 사용된코덱
-- 비디오 너비높이
-- 레벨이름
-- 레벨유알엘
-
 
 ### LevelDetails
 
