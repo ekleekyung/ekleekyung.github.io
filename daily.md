@@ -1,9 +1,30 @@
 #daily
-- tags
- [intellij] : intellij툴 관련
- [미디어캐스트] : 미디어캐스트 관련
- [싸인캐스트] : 미디어캐스트 관련
- [blog] : 현재작업내용.
+ - tags : memo.md 참조
+
+##tips
+###[intellij] jsp 서버재시작없이 반영
+> project structure
+> project settings
+> artifacts
+> exploded war선택 > output directory
+> target에서 webapp으로 변경
+
+
+```
+D:\workspace\SignCastV2\target\SignCastV2User
+->
+D:\workspace\SignCastV2\src\main\webapp
+```
+
+
+
+##todo solve
+###1.[intellij]dc 등 관련 live template 설정 옮기기.
+###2.[MC] player_skin null 문제 - event시
+###3. Jekyll을 사용하여 GitHub Pages 만들기 - 우선순위 낮아도 됨.
+###4. diff classes path
+###5.
+
 
 ##solved
 ###[intellij] hibernate schema run as application 문제.//2017.12.18 : -ek
@@ -23,7 +44,7 @@ error log : servlet null 관련  >
  2. cfg 위치수정(resource 쪽으로)
 
 
-###[싸인캐스트] jdk complier 1.6으로 되돌아보는문제.//2017.11.?? : -ek
+###[SC] jdk complier 1.6으로 재지정문제.//2017.11.?? : -ek
  1. pom.xml 수정
  maven-compiler-plugin 내 config 의 source와 target 을 1.7로 수정
 
@@ -42,11 +63,7 @@ error log : servlet null 관련  >
 </plugin>
 ```
 
-##todo solve
-###1.[intellij]dc 등 관련 live template 설정 옮기기.
-###2.[미디어캐스트] player_skin null 문제 - event시
-###3. Jekyll을 사용하여 GitHub Pages 만들기 - 우선순위 낮아도 됨.
-###4. diff classes path
+
 
 블로그 링크:
 http://blog.saltfactory.net/upgrade-github-pages-dependency-versions/
@@ -64,3 +81,5 @@ https://github.com/jekyll/jekyll/pull/2031
 
 ##todo organize
 ###1.
+
+
